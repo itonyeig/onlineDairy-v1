@@ -58,6 +58,7 @@ app.post('/compose', function(req, res){
 app.get('/posts/:postName' , function(req, res){
   //using loadash to covert string to all lowerCase 
   const requestedTittle = _.lowerCase(req.params.postName); 
+  console.log(req.params);
   posts.forEach(post => {
     const stroredTittle = _.lowerCase(post.tittle);
     if(requestedTittle === stroredTittle){
@@ -72,7 +73,9 @@ app.get('/posts/:postName' , function(req, res){
 });
 
 
-
+app.get('post',function(req, res){
+  res.render('post');
+});
 
 
 

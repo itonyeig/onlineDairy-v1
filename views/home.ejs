@@ -6,7 +6,11 @@
 
     <% posts.forEach(post => {%>
         <h1> <%=post.tittle%> </h1>
-        <p> <%=post.body%></p>
+        <p class=> <%=post.body.substring(0,100) + ' ...  '%>
+            <% if(post.body.length>100){ %>
+                <a href="posts/<%=post.tittle%>">Read More</a></p>
+            <% } %>
+            
         <% }) %>
 
 
